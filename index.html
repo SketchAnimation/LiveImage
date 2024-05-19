@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9N9911MNC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B9N9911MNC');
+  </script>
+  
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LiveImage: Motion condition guided diffusion model for video motion transfer">
+  <meta name="keywords" content="Image, Animation, Keypoints, Gussian blue">
+  <meta name="viewport" content="width=device-width, initial-scale=0.1">
+  <title>LiveImage: Motion condition guided diffusion model for video motion transfer</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-tooltip.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!--Title block-->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop" id="top">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-1 publication-title">LiveImage: Motion condition guided diffusion model for video motion transfer</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="" target="_blank">Anonymous Authors</a></span>
+          </div>
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="coming soon" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="coming soon" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/SketchAnimation/LiveImage" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+           
+            </div>
+          </div>
+
+
+          <div class="columns is-centered has-text-centered is-variable is-8">
+          <div class="column is-three-quarters is-centered has-text-centered">
+            <div class="publication-links ">
+
+            <span class="link-block">
+              <a href="#gallery"
+                  class="nav-link button-55 is-normal">
+                <span>Results</span>
+                </a>
+            </span>
+
+            <span class="link-block">
+              <a href="#comparisons"
+                 class="nav-link button-55 is-normal">
+                <span>Comparisons</span>
+                </a>
+            </span>            
+
+            <span class="link-block">
+              <a href="#network"
+                 class="nav-link button-55 is-normal">
+                <span>How does it work?</span>
+                </a>
+            </span>
+
+            <span class="link-block">
+              <a href="#limitations"
+                 class="nav-link button-55 is-normal">
+                <span>Limitations</span>
+                </a>
+            </span>
+
+            
+          </div>
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Video-->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    
+        <div class="item">
+          <p style="margin-bottom: 30px">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="static/videos/main_video/teaser.mp4"
+          type="video/mp4">
+
+        </video>
+        <!-- <h6 class="caption">We recommend watching the video with sound on</h6> -->
+        </p>
+      </div>
+  </div>
+</section>
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+        <p>
+		Manual creation of character animations using traditional tools is tedious and cumbersome for a novice animator. Video-to-image motion retargeting emerges as an automated approach for animating an input image using an exemplar video. State-of-the-art animation methods often produce artifacts in presence of drastic pose changes within a video. To address this issue, we propose LiveImage, which handles the large pose problem and overcomes various artifacts and shape distortions in the generated video frames. LiveImage utilize a single-domain motion model with keypoint regularization first to produce coarse-grained frames that effectively capture motion and structural information. A motion condition network then estimates fine-grained video frames using denoising diffusion model to counteract unnatural artifacts and distortions arising from large pose changes. Our proposed methodology undergoes comprehensive qualitative and quantitative evaluations, demonstrating its efficacy in overcoming challenges associated with motion transfer from video to image.
+        </p>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="section-title has-text-centered is-centered">
+      <h2 class="title is-3">How does it work?</h2><br>
+    </div>
+    <div class="section-title has-text-centered is-centered">
+      <h3 class="title is-3">Network Architecture</h3>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <img id="network" src="static/images/method/live_image_architecture.png" alt="MY ALT TEXT" style="max-width: 100%; height: 1024px; width: 720px"/>
+        <div class="content has-text-justified" style="max-width: 80%;">
+			Overview of our proposed motion model for image animation.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Comparisons -->
+<section class="section hero is-light">
+  <div class="container is-widescreen" id="gallery">
+    <div class="link-block ">
+      <a href="#top"
+          class="nav-link button-55 is-normal">
+        <span>Go to Top</span>
+        </a>
+    </div>
+    <div class="section-title has-text-centered is-centered">
+      <h2 class="title is-3">Results</h2><br>
+    </div>
+    <div class="columns is-centered has-text-centered is-variable is-8">
+      <div class="column is-two-fifths is-centered has_border_right">
+        <!-- <img class="comp_src_img" src="static/images/teaser/ballerina.gif" alt="bike"/> -->
+          <div class="comp_gallery">
+
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/vox/8.png" alt="bike"/>
+                <h6 class="caption">Source</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/vox/23.gif" alt="bike"/>
+                <h6 class="caption">Driving</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/vox/8-23.gif" alt="bike"/>
+                <h6 class="caption">Generated</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/fashion/source.png" alt="bike"/>
+                <h6 class="caption">Source</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/fashion/driving.gif" alt="bike"/>
+                <h6 class="caption">Driving</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/fashion/generated.gif" alt="bike"/>
+                <h6 class="caption">Generated</h6>
+            </div>
+          </div>
+      </div>
+      <div class="column is-two-fifths is-centered has_border_left">
+        <!-- <img class="comp_src_img" src="static/images/teaser/fish.gif" alt="bike"/> -->
+          <div class="comp_gallery">
+
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/taichi/1.png" alt="bike"/>
+                <h6 class="caption">Source</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/taichi/8.gif" alt="bike"/>
+                <h6 class="caption">Driving</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/taichi/1-8.gif" alt="bike"/>
+                <h6 class="caption">Generated</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/mgif/52.png" alt="bike"/>
+                <h6 class="caption">Source</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/mgif/43.gif" alt="bike"/>
+                <h6 class="caption">Driving</h6>
+            </div>
+            <div class="captioned_video">
+                <img class="gallery_img" src="static/videos/results/mgif/52-43.gif" alt="bike"/>
+                <h6 class="caption">Generated</h6><br>
+            </div>
+          </div>
+      </div>
+    </div>
+	  <div class="section is-centered has-text-centered">
+	    We experiment our method on different datasets: (<a href="https://github.com/AliaksandrSiarohin/video-preprocessing"><b> Vox </b> </a>, <a href="https://github.com/AliaksandrSiarohin/video-preprocessing"><b>Taichi</b></a>, <a href="https://vision.cs.ubc.ca/datasets/fashion/"><b>Fashion</b></a>, and <a href="https://github.com/AliaksandrSiarohin/first-order-model"><b>Mgif</b></a>).
+	      We provide the videos used in our quantitative experiement.
+	    </div>   
+  </div>
+</section>
+  
+
+<!-- Comparing Video Models -->
+<section class="section">
+  <div class="container is-widescreen" id="comparisons">
+    <div class="link-block ">
+      <a href="#top"
+          class="nav-link button-55 is-normal">
+        <span>Go to Top</span>
+        </a>
+    </div>
+    <div class="section-title has-text-centered is-centered">
+      <h2 class="title is-3">Comparison</h2><br>
+    </div>
+
+
+    <div class="columns is-centered has-text-centered is-variable is-8">
+      <div class="column is-one-fifths is-centered">
+          <div class="vidcomp_gallery">
+
+          <div class="captioned_video">
+            <h6 class="caption">Input</h6>
+        </div>
+         <div class="captioned_video">
+            <h6 class="caption">Driving</h6>
+        </div>
+        <div class="captioned_video">
+          <h6 class="caption">FOMM</h6>
+      </div>
+        <div class="captioned_video">
+            <h6 class="caption">MRAA</h6>
+        </div>
+        <div class="captioned_video">
+            <h6 class="caption">TPS</h6>
+        </div>
+        <div class="captioned_video">
+            <h6 class="caption">MT</h6>
+        </div>
+        <div class="captioned_video">
+          <h6 class="caption">DAM</h6>
+      </div>
+      <div class="captioned_video">
+        <h6 class="caption">LiveImage (Ours)</h6>
+    </div>
+      
+            <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/20.png" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/22.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/20-22_fomm.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/20-22_mraa.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/20-22_tps.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/20-22_dam.gif" alt="bike"/>
+          </div>
+            <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/20-22_MT.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/20-22_live.gif" alt="bike"/>
+          </div>
+
+            <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/25.png" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/14.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/25-14_fomm.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/25-14_mraa.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/25-14_tps.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/25-14_dam.gif" alt="bike"/>
+          </div>
+            <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/25-14_MT.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/25-14_live.gif" alt="bike"/>
+          </div>
+
+
+            <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/12.png" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/15.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/12-15_fomm.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/12-15_mraa.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/12-15_tps.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/12-15_dam.gif" alt="bike"/>
+          </div>
+            <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/12-15_MT.gif" alt="bike"/>
+          </div>
+          <div class="captioned_video">
+              <img class="vidcomp_src_img" src="static/videos/comparisons/12-15_live.gif" alt="bike"/>
+          </div>
+
+
+            <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/58.png" alt="bike"/>
+            </div>
+            <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/56.gif" alt="bike"/>
+            </div>
+            <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/58-56_fomm.gif" alt="bike"/>
+            </div>
+            <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/58-56_mraa.gif" alt="bike"/>
+            </div>
+            <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/58-56_tps.gif" alt="bike"/>
+            </div>
+            <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/58-56_dam.gif" alt="bike"/>
+            </div>
+              <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/58-56_MT.gif" alt="bike"/>
+            </div>
+              <div class="captioned_video">
+                <img class="vidcomp_src_img" src="static/videos/comparisons/58-56_live.gif" alt="bike"/>
+            </div>
+          </div>
+      </div>
+    </div>
+        <!-- <div class="section is-centered has-text-centered"> -->
+	  <div class="section is-centered has-text-centered">
+	    We compare our method to five baselines: (<a href="https://aliaksandrsiarohin.github.io/first-order-model-website/">FOMM</a>, <a href="https://snap-research.github.io/articulated-animation/">MRAA</a>, <a href="https://arxiv.org/abs/2203.14367">TPS</a>, <a href="https://arxiv.org/abs/2209.14024">MT</a>, and <a href="https://arxiv.org/abs/2204.05018">DAM</a>). We can see that our method generates state-of-the-art results.
+	      
+	    </div>   
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Limitations -->
+<section class="section" id="limitations">
+  <div class="container is-widescreen">
+    <div class="link-block">
+      <a href="#top" class="nav-link button-55 is-normal">
+        <span>Go to Top</span>
+      </a>
+    </div>
+
+    <div class="section-title has-text-centered is-centered">
+      <h2 class="title is-3">Limitations</h2>
+      <br>
+      <div class="columns is-centered has-text-centered is-variable is-8">
+        <div class="column is-two-thirds is-centered">
+          <h2 class="title is-4">False correspondence & Occlusion</h2>
+          <div class="content has-text-justified">
+            <p>
+              Our method suffers in case of false correspondence and self-occlusion. If there is a large mismatch between the source and driving video and self-occlusion, its performance is compromised. As demonstrated in the example given below:
+            </p>
+          </div>
+          <div class="limitation_gallery">
+            <div class="captioned_video">
+              <img class="limitation_src_img" src="static/videos/limitations/src1.png" alt="bike"/>
+              <h6 class="caption">Input image</h6>
+            </div>
+            <div class="captioned_video">
+              <img class="limitation_src_img" src="static/videos/limitations/dri1.gif" alt="bike"/>
+              <h6 class="caption">Driving</h6>
+            </div>
+            <div class="captioned_video">
+              <img class="limitation_src_img" src="static/videos/limitations/res1.gif" alt="bike"/>
+              <h6 class="caption">Output</h6>
+            </div>
+          </div>
+
+          <h2 class="title is-4">Cross-modality Motion Transfer</h2>
+          <div class="content has-text-justified">
+            <p>
+              Our method is limited to the image modality. If we animate sketch or transfer cartoon video motion, it suffers in motion estimation, thus generating artifacts and causing shape distortion.
+            </p>
+          </div>
+          <div class="limitation_gallery">
+            <div class="captioned_video">
+              <img class="limitation_src_img" src="static/videos/limitations/src2.png" alt="bike"/>
+              <h6 class="caption">Input image</h6>
+            </div>
+            <div class="captioned_video">
+              <img class="limitation_src_img" src="static/videos/limitations/dri2.gif" alt="bike"/>
+              <h6 class="caption">Driving</h6>
+            </div>
+            <div class="captioned_video">
+              <img class="limitation_src_img" src="static/videos/limitations/res2.gif" alt="bike"/>
+              <h6 class="caption">Output</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="coming soon">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="coming soon" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website content is licensed under a <a rel="license"
+                                                href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+            Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
